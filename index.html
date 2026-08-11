@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Human Metrix — Models built from public survey data</title>
+<meta name="description" content="Human Metrix turns national survey data into demographic prediction models anyone can question. Public data, published methods, stated uncertainty.">
+<meta property="og:title" content="Human Metrix">
+<meta property="og:description" content="Models built from public survey data. Methods published, uncertainty stated.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://humanmetrix.org">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10161A;
+  --muted:#5C6B6B;
+  --rule:#E2E6E3;
+  --wash:#F5F7F5;
+  --brand:#1D4A46;
+  --brand-mid:#4E837A;
+  --brand-pale:#CBD8D4;
+  --measure:78rem;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:#fff;color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,sans-serif;
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 2rem}
+@media(max-width:640px){.wrap{padding:0 1.25rem}}
+
+/* ---------- nav ---------- */
+.nav{
+  border-bottom:1px solid var(--rule);position:sticky;top:0;background:#fff;z-index:20;
+}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:4.5rem}
+.mark{
+  font-weight:700;letter-spacing:-.02em;font-size:1.15rem;text-decoration:none;
+  display:flex;align-items:baseline;gap:.45rem;
+}
+.mark span{color:var(--brand)}
+.mark em{
+  font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:.6rem;
+  letter-spacing:.16em;color:var(--muted);text-transform:uppercase;
+}
+.nav ul{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
+.nav a{
+  text-decoration:none;font-size:.92rem;font-weight:500;color:var(--muted);
+  padding:.3rem 0;border-bottom:2px solid transparent;
+}
+.nav a:hover{color:var(--ink);border-color:var(--brand)}
+.nav a:focus-visible{outline:2px solid var(--brand);outline-offset:4px}
+@media(max-width:640px){.nav ul{gap:1.1rem}.nav a{font-size:.82rem}}
+
+/* ---------- hero ---------- */
+.hero{padding:6rem 0 5rem;border-bottom:1px solid var(--rule)}
+.hero h1{
+  font-size:clamp(2.1rem,5.2vw,4rem);line-height:1.1;letter-spacing:-.03em;
+  font-weight:600;margin:0;max-width:20ch;
+}
+.hero p{
+  max-width:44ch;color:var(--muted);font-size:1.1rem;margin:2rem 0 0;
+}
+.hero .cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.5rem}
+.btn{
+  display:inline-block;text-decoration:none;font-size:.92rem;font-weight:500;
+  padding:.8rem 1.5rem;border:1.5px solid var(--brand);
+}
+.btn.solid{background:var(--brand);color:#fff}
+.btn.solid:hover{background:#143734}
+.btn.ghost{color:var(--brand)}
+.btn.ghost:hover{background:var(--wash)}
+.btn:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+
+/* ---------- sections ---------- */
+section{padding:5rem 0;border-bottom:1px solid var(--rule)}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brand-mid);margin:0 0 1rem;
+}
+h2{
+  font-size:clamp(1.6rem,3.4vw,2.5rem);letter-spacing:-.02em;font-weight:600;
+  margin:0 0 1rem;max-width:24ch;line-height:1.15;
+}
+.lede{color:var(--muted);max-width:52ch;margin:0 0 3rem;font-size:1.02rem}
+
+/* ---------- pillars ---------- */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem}
+.pillar{border-top:2px solid var(--brand);padding-top:1.4rem}
+.pillar h3{font-size:1.12rem;margin:0 0 .7rem;font-weight:600;letter-spacing:-.01em}
+.pillar p{margin:0;color:var(--muted);font-size:.95rem}
+@media(max-width:820px){.pillars{grid-template-columns:1fr;gap:2rem}}
+
+/* ---------- spotlight ---------- */
+.spotlight{
+  display:grid;grid-template-columns:1.15fr 1fr;gap:4rem;align-items:center;
+}
+.spotlight h3{
+  font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-.02em;margin:.4rem 0 1rem;
+  font-weight:600;line-height:1.2;
+}
+.spotlight p{color:var(--muted);margin:0 0 1.6rem}
+.stats{display:flex;gap:2.5rem;margin:2rem 0;flex-wrap:wrap}
+.stat b{
+  display:block;font-family:"IBM Plex Mono",monospace;font-size:1.7rem;
+  font-weight:500;letter-spacing:-.02em;color:var(--brand);
+}
+.stat span{font-size:.78rem;color:var(--muted)}
+.viz{background:var(--wash);padding:2.2rem}
+.viz .vlabel{
+  font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:.55rem;
+}
+.ribbon{display:flex;height:2.6rem;overflow:hidden}
+.ribbon i{
+  font-style:normal;display:flex;align-items:center;justify-content:center;
+  font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:#fff;
+}
+.ribbon i:nth-child(1){background:var(--brand-pale);color:var(--ink)}
+.ribbon i:nth-child(2){background:#93B6AE;color:var(--ink)}
+.ribbon i:nth-child(3){background:var(--brand-mid)}
+.ribbon i:nth-child(4){background:var(--brand)}
+.vnote{font-size:.78rem;color:var(--muted);margin-top:1rem}
+@media(max-width:900px){.spotlight{grid-template-columns:1fr;gap:2.5rem}}
+
+/* ---------- model grid ---------- */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+.card{
+  display:flex;flex-direction:column;text-decoration:none;
+  border-top:1px solid var(--rule);padding-top:1.3rem;
+}
+a.card:hover h3{color:var(--brand)}
+.card .tag{
+  font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brand-mid);margin-bottom:.7rem;
+}
+.card.soon .tag{color:var(--muted)}
+.card h3{font-size:1.16rem;font-weight:600;letter-spacing:-.015em;margin:0 0 .6rem;line-height:1.25}
+.card p{margin:0;color:var(--muted);font-size:.92rem}
+.card .src{
+  font-family:"IBM Plex Mono",monospace;font-size:.66rem;color:var(--muted);
+  margin-top:1rem;padding-top:.7rem;border-top:1px solid var(--rule);
+}
+.card.soon{opacity:.62}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);gap:2rem}}
+@media(max-width:620px){.grid{grid-template-columns:1fr}}
+
+/* ---------- method ---------- */
+.method{background:var(--wash);border-bottom:1px solid var(--rule)}
+.method .wrap{padding-top:5rem;padding-bottom:5rem}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.mgrid p{color:var(--muted);font-size:.95rem;margin:0 0 1.1rem;max-width:50ch}
+.mgrid strong{color:var(--ink);font-weight:600}
+@media(max-width:820px){.mgrid{grid-template-columns:1fr;gap:1rem}}
+
+/* ---------- footer ---------- */
+footer{padding:3.5rem 0 4rem;font-size:.86rem;color:var(--muted)}
+.frow{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+footer a{color:var(--muted)}
+.disclaimer{
+  margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);
+  max-width:62ch;font-size:.8rem;
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="mark" href="/">Human <span>Metrix</span><em>.org</em></a>
+    <ul>
+      <li><a href="#models">Models</a></li>
+      <li><a href="#method">Method</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Turning the surveys that measure America into models anyone can question.</h1>
+    <p>Every year, federal agencies phone, mail and measure hundreds of thousands of Americans. The results sit in public files that almost nobody opens. We open them.</p>
+    <div class="cta">
+      <a class="btn solid" href="/models/body-weight.html">Try the weight model</a>
+      <a class="btn ghost" href="#method">How this works</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">How we work</p>
+    <h2>Three commitments that shape every model on this site</h2>
+    <div class="pillars">
+      <div class="pillar">
+        <h3>Public data only</h3>
+        <p>Every model is built from public-use files — CDC BRFSS, NHANES, the American Community Survey. Nothing proprietary, nothing behind a paywall, nothing you cannot download and check yourself.</p>
+      </div>
+      <div class="pillar">
+        <h3>Methods in the open</h3>
+        <p>The fitting script ships alongside the model. Coefficients are published as plain JSON. If you disagree with a specification, you have everything you need to refit it and show us we were wrong.</p>
+      </div>
+      <div class="pillar">
+        <h3>Uncertainty stated first</h3>
+        <p>Each model reports how much better it does than simply guessing the national average. Often the answer is: not much. That belongs on the page, not buried in a footnote.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Spotlight</p>
+    <div class="spotlight">
+      <div>
+        <h3>What 414,633 phone calls reveal about American body weight</h3>
+        <p>The CDC asks a third of a million adults their height and weight every year. Describe someone — age, race, income, schooling, exercise, state — and this model reports the weight distribution the survey would expect for people who answered the same way.</p>
+        <p>It also shows you how little that prediction actually moves.</p>
+        <div class="stats">
+          <div class="stat"><b>414,633</b><span>respondents</span></div>
+          <div class="stat"><b>18</b><span>characteristics</span></div>
+          <div class="stat"><b>5%</b><span>better than guessing</span></div>
+        </div>
+        <a class="btn solid" href="/models/body-weight.html">Open the model</a>
+      </div>
+      <div class="viz">
+        <div class="vlabel">All US adults, 2024</div>
+        <div class="ribbon">
+          <i style="flex:2.3"></i><i style="flex:30.5">31%</i><i style="flex:34">34%</i><i style="flex:33.2">33%</i>
+        </div>
+        <p class="vnote">Underweight, normal, overweight and obese, as self-reported to the Behavioral Risk Factor Surveillance System. Measured studies put the obese share closer to 40% — the gap is what people tell strangers on the phone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="models">
+  <div class="wrap">
+    <p class="eyebrow">Models</p>
+    <h2>What we have built, and what is coming</h2>
+    <p class="lede">Each model is a single page that runs entirely in your browser. Nothing you type is sent anywhere.</p>
+    <div class="grid">
+
+      <a class="card" href="/models/body-weight.html">
+        <div class="tag">Live &middot; Health</div>
+        <h3>How to predict how fat someone is</h3>
+        <p>Weight category probabilities from eighteen demographic and behavioural characteristics, weighted to the US adult population.</p>
+        <div class="src">CDC BRFSS 2024</div>
+      </a>
+
+      <div class="card soon">
+        <div class="tag">Planned</div>
+        <h3>Who has health insurance and who does not</h3>
+        <p>Coverage probability by state, income, employment and age — including the coverage cliffs at 26 and 65.</p>
+        <div class="src">CDC BRFSS · ACS</div>
+      </div>
+
+      <div class="card soon">
+        <div class="tag">Planned</div>
+        <h3>How many bad mental health days</h3>
+        <p>The survey asks how many days in the past month your mental health was not good. The demographic pattern is sharper than most people expect.</p>
+        <div class="src">CDC BRFSS 2024</div>
+      </div>
+
+      <div class="card soon">
+        <div class="tag">Planned</div>
+        <h3>Who still smokes</h3>
+        <p>Smoking has collapsed nationally but not evenly. This model shows where it held on.</p>
+        <div class="src">CDC BRFSS 2024</div>
+      </div>
+
+      <div class="card soon">
+        <div class="tag">Planned</div>
+        <h3>What a household actually earns</h3>
+        <p>Income distribution by occupation, education, geography and age, from the census microdata sample.</p>
+        <div class="src">ACS PUMS</div>
+      </div>
+
+      <div class="card soon">
+        <div class="tag">Planned</div>
+        <h3>Self-reported versus measured</h3>
+        <p>Two federal surveys ask the same question, one by phone and one with a scale. The difference between them is a map of how Americans lie.</p>
+        <div class="src">BRFSS vs NHANES</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="method" id="method">
+  <div class="wrap">
+    <p class="eyebrow">Method</p>
+    <h2>What these models can and cannot tell you</h2>
+    <div class="mgrid">
+      <div>
+        <p><strong>They describe groups, not people.</strong> A model that knows your age, income and state knows almost nothing about you specifically. It knows what the average of everyone who answered identically looks like. Those are very different claims, and the second one is the only one we make.</p>
+        <p><strong>Survey weights are applied throughout.</strong> Federal surveys oversample some groups and undersample others by design. Every figure here is weighted back to the national population, which is why our numbers match published CDC estimates rather than the raw file.</p>
+      </div>
+      <div>
+        <p><strong>Correlation is all a cross-section can give you.</strong> These surveys photograph a population once. When exercise and body weight move together, nothing in the data says which came first, and we do not pretend otherwise.</p>
+        <p><strong>Self-reported data carries self-reported error.</strong> People shave weight and add height. Where a measured comparison exists, we show it rather than quietly hoping you do not notice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <p class="eyebrow">About</p>
+    <h2>An independent project, not an institution</h2>
+    <p class="lede">Human Metrix is an independent effort to make federal survey data legible to people who will never open a SAS transport file. No funding, no affiliation with any agency whose data appears here, and no interest in telling you what to conclude.</p>
+    <a class="btn ghost" href="mailto:hello@humanmetrix.org">Get in touch</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <div>&copy; 2026 Human Metrix</div>
+      <div>
+        <a href="#models">Models</a> &nbsp;&middot;&nbsp;
+        <a href="#method">Method</a> &nbsp;&middot;&nbsp;
+        <a href="mailto:hello@humanmetrix.org">Contact</a>
+      </div>
+    </div>
+    <p class="disclaimer">Nothing on this site is medical advice, and no model here diagnoses anything. BMI in particular is a population-level measure that cannot distinguish muscle from fat and was calibrated on largely European populations. If you have a question about your own health, ask a clinician, not a regression.</p>
+  </div>
+</footer>
+
+</body>
+</html>
