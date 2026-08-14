@@ -3,23 +3,50 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to Predict How Fat Someone Is — Human Metrix</title>
-<meta name="description" content="Weight category probabilities for US adults from eighteen characteristics, built on CDC BRFSS 2024.">
+<title>Body Weight Model — Human Metrix</title>
+<meta name="description" content="Weight category probabilities for US adults from eighteen demographic and behavioral characteristics, built on CDC BRFSS 2024 (n=414,633). Public data, published method.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://humanmetrix.org/models/body-weight.html">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:site_name" content="Human Metrix">
+<meta property="og:title" content="Body Weight Model — Human Metrix">
+<meta property="og:description" content="Weight category probabilities for US adults from eighteen demographic and behavioral characteristics, built on CDC BRFSS 2024.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://humanmetrix.org/models/body-weight.html">
+<meta property="og:image" content="https://humanmetrix.org/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Human Metrix Body Weight Model",
+  "description": "Weight category probabilities for US adults predicted from eighteen demographic and behavioral characteristics.",
+  "url": "https://humanmetrix.org/models/body-weight.html",
+  "creator": {"@type": "Organization", "name": "Human Metrix", "url": "https://humanmetrix.org/"},
+  "isBasedOn": "https://www.cdc.gov/brfss/",
+  "temporalCoverage": "2024"
+}
+</script>
 <style>
 :root{
-  --paper:#E8EBE4;
-  --paper-deep:#DDE2D8;
-  --ink:#16191A;
-  --ink-soft:#5A625C;
-  --rule:#C4CABD;
-  --brass:#9A6E1C;
-  --c0:#CBD8D4;
-  --c1:#93B6AE;
-  --c2:#4E837A;
-  --c3:#1D4A46;
+  --paper:#EEF2F7;
+  --paper-deep:#DEE6F0;
+  --ink:#0B0E14;
+  --ink-soft:#5B6472;
+  --rule:#C9D3E0;
+  --brass:#B8452D;
+  --navy-900:#081B33;
+  --navy-700:#0E2A52;
+  --c0:#BBD3F5;
+  --c1:#8FB4E8;
+  --c2:#2E6FD9;
+  --c3:#0E2A52;
   --measure:66rem;
 }
 *{box-sizing:border-box}
@@ -33,33 +60,33 @@ body{
   background-size:28px 28px;
 }
 .wrap{max-width:var(--measure);margin:0 auto;padding:0 1.5rem}
-.sitenav{border-bottom:1px solid var(--rule);background:var(--paper)}
+.sitenav{border-bottom:1px solid rgba(255,255,255,.14);background:var(--navy-900)}
 .sitenav .wrap{display:flex;align-items:center;justify-content:space-between;height:3.6rem}
 .sitenav a.mark{
-  font-family:"IBM Plex Sans",sans-serif;font-weight:600;font-size:1rem;
-  letter-spacing:-.02em;text-decoration:none;color:var(--ink);
+  font-family:"IBM Plex Sans",sans-serif;font-weight:700;font-size:1rem;
+  letter-spacing:-.02em;text-decoration:none;color:#fff;
 }
-.sitenav a.mark span{color:var(--brass)}
+.sitenav a.mark span{color:var(--c0)}
 .sitenav .back{
   font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--ink-soft);text-decoration:none;
+  text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none;
 }
-.sitenav .back:hover{color:var(--brass)}
+.sitenav .back:hover{color:#fff}
 
 
 /* ---- masthead ---- */
-header{border-bottom:1.5px solid var(--ink);margin-bottom:3rem}
+header{border-bottom:1.5px solid var(--ink);margin-bottom:2rem}
 .eyebrow{
   font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--brass);padding-top:2.2rem;
+  text-transform:uppercase;color:var(--brass);padding-top:1.6rem;
 }
 h1{
   font-family:"Instrument Serif",Georgia,serif;font-weight:400;
-  font-size:clamp(2.6rem,7vw,5rem);line-height:1.02;
-  margin:.6rem 0 .4rem;letter-spacing:-.015em;
+  font-size:clamp(2.4rem,6.5vw,4.4rem);line-height:1.02;
+  margin:.5rem 0 .4rem;letter-spacing:-.015em;
 }
 h1 em{font-style:italic;color:var(--brass)}
-.standfirst{max-width:46ch;color:var(--ink-soft);margin:0 0 2.5rem;font-size:1.05rem}
+.standfirst{max-width:46ch;color:var(--ink-soft);margin:0 0 1.6rem;font-size:1.03rem}
 
 /* ---- the sentence ---- */
 .builder{margin-bottom:1rem}
@@ -83,7 +110,7 @@ h1 em{font-style:italic;color:var(--brass)}
 .slot select:hover{background:rgba(154,110,28,.09)}
 .slot select:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 
-.controls{display:flex;gap:.75rem;flex-wrap:wrap;margin:2rem 0 3.5rem}
+.controls{display:flex;gap:.75rem;flex-wrap:wrap;margin:1.4rem 0 2.2rem}
 button{
   font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.1em;
   text-transform:uppercase;background:transparent;color:var(--ink);
@@ -93,7 +120,7 @@ button:hover{background:var(--ink);color:var(--paper)}
 button:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
 
 /* ---- result ---- */
-.result{border-top:1.5px solid var(--ink);padding-top:2.2rem;margin-bottom:4rem}
+.result{border-top:1.5px solid var(--ink);padding-top:1.6rem;margin-bottom:2.6rem}
 .ribbon-label{
   font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.14em;
   text-transform:uppercase;color:var(--ink-soft);margin-bottom:.5rem;
@@ -116,7 +143,7 @@ button:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
   color:var(--ink-soft);margin-top:.45rem;
   border-top:1px solid var(--rule);padding-top:.3rem;
 }
-.legend{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:1.6rem}
+.legend{display:flex;flex-wrap:wrap;gap:1.1rem;margin-top:1.1rem}
 .legend div{display:flex;align-items:baseline;gap:.5rem;font-size:.85rem}
 .sw{width:.85rem;height:.85rem;flex:0 0 auto;transform:translateY(.08rem)}
 .legend b{font-family:"IBM Plex Mono",monospace;font-weight:500}
@@ -127,8 +154,8 @@ section h2{
   font-family:"Instrument Serif",Georgia,serif;font-weight:400;
   font-size:clamp(1.7rem,3.5vw,2.4rem);margin:0 0 .4rem;letter-spacing:-.01em;
 }
-.section-note{color:var(--ink-soft);max-width:52ch;margin:0 0 2rem;font-size:.95rem}
-.swing{border-top:1.5px solid var(--ink);padding-top:2rem;margin-bottom:4rem}
+.section-note{color:var(--ink-soft);max-width:52ch;margin:0 0 1.4rem;font-size:.95rem}
+.swing{border-top:1.5px solid var(--ink);padding-top:1.4rem;margin-bottom:2.6rem}
 .srow{
   display:grid;grid-template-columns:9.5rem 1fr;gap:1rem;
   align-items:center;padding:.42rem 0;border-bottom:1px solid var(--rule);
@@ -159,7 +186,7 @@ section h2{
 }
 
 /* ---- notes ---- */
-.notes{border-top:1.5px solid var(--ink);padding:2rem 0 5rem}
+.notes{border-top:1.5px solid var(--ink);padding:1.4rem 0 3rem}
 .notes h3{
   font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.14em;
   text-transform:uppercase;color:var(--brass);margin:0 0 1rem;font-weight:500;
@@ -167,7 +194,7 @@ section h2{
 .notes p{max-width:60ch;font-size:.92rem;color:var(--ink-soft);margin:0 0 1rem}
 .notes strong{color:var(--ink);font-weight:500}
 .pull{
-  border-left:2px solid var(--brass);padding-left:1.1rem;margin:2rem 0;
+  border-left:2px solid var(--brass);padding-left:1.1rem;margin:1.4rem 0;
   max-width:52ch;font-family:"Instrument Serif",Georgia,serif;
   font-size:1.25rem;line-height:1.45;color:var(--ink);
 }

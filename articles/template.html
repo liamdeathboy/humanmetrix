@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[STUB — Article Title] — Human Metrix</title>
+<meta name="description" content="[STUB — one-sentence summary for search results and social previews, ~150 characters]">
+<meta name="robots" content="noindex, nofollow">
+<!-- STUB: once this is a real article, replace the block above with:
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://humanmetrix.org/articles/[slug].html">
+<meta property="og:title" content="[Article Title] — Human Metrix">
+<meta property="og:description" content="[same as meta description]">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://humanmetrix.org/articles/[slug].html">
+<meta property="og:image" content="https://humanmetrix.org/assets/og-image.png">
+and add the new URL to /sitemap.xml. -->
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0E14;
+  --muted:#5B6472;
+  --rule:#E1E5EA;
+  --wash:#F3F5F8;
+  --navy-900:#081B33;
+  --navy-700:#0E2A52;
+  --navy-500:#173F78;
+  --blue-400:#2E6FD9;
+  --blue-200:#BBD3F5;
+  --accent:#B8452D;
+  --measure:42rem;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font-family:Inter,system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--navy-700)}
+img,svg{max-width:100%;display:block}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 2rem}
+.wrapwide{max-width:56rem;margin:0 auto;padding:0 2rem}
+@media(max-width:640px){.wrap,.wrapwide{padding:0 1.25rem}}
+
+/* template banner — delete this whole block when the article is finished */
+.tplbanner{background:var(--accent);color:#fff;text-align:center;padding:.7rem 1rem;font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.06em}
+.tplbanner strong{text-decoration:underline}
+
+.nav{border-bottom:1px solid rgba(255,255,255,.14);background:var(--navy-900)}
+.nav .inner{display:flex;align-items:center;justify-content:space-between;height:4rem;max-width:56rem;margin:0 auto;padding:0 2rem}
+.mark{font-weight:800;letter-spacing:-.02em;font-size:1.05rem;text-decoration:none;color:#fff;display:flex;align-items:baseline;gap:.4rem}
+.mark span{color:var(--blue-200)}
+.back{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none}
+.back:hover{color:#fff}
+@media(max-width:640px){.nav .inner{padding:0 1.25rem}}
+
+header.masthead{padding:2.4rem 0 1.8rem;border-bottom:1px solid var(--rule);margin-bottom:1.8rem}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 1.1rem}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(2.2rem,5.5vw,3.2rem);line-height:1.08;letter-spacing:-.01em;margin:0 0 1rem}
+.standfirst{color:var(--muted);font-size:1.1rem;max-width:36ch;margin:0 0 1.6rem}
+.byline{display:flex;gap:1rem;flex-wrap:wrap;font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+.stub{position:relative;overflow:hidden;border-radius:14px;border:1.5px dashed var(--blue-200);
+  background:linear-gradient(135deg,var(--navy-700),var(--blue-400));min-height:150px;margin:0 0 2rem}
+.stub::before{content:"";position:absolute;inset:0;opacity:.5;background-image:repeating-linear-gradient(118deg,rgba(255,255,255,.08) 0 2px,transparent 2px 24px)}
+.stub .stag{position:absolute;top:.7rem;left:.7rem;font-family:"IBM Plex Mono",monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(0,0,0,.4);color:#fff;padding:.3rem .55rem;border:1px solid rgba(255,255,255,.3);border-radius:4px}
+.stub .scap{position:absolute;bottom:.75rem;left:.75rem;right:.75rem;font-family:"IBM Plex Mono",monospace;font-size:.66rem;line-height:1.4;color:#EAF1FC;opacity:.9}
+.stub.hero{height:16rem}
+.stub.alt1{background:linear-gradient(150deg,var(--navy-900),var(--navy-500))}
+.stub.alt2{background:linear-gradient(150deg,var(--blue-400),var(--navy-700))}
+
+article{padding-bottom:2.5rem}
+article h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(1.4rem,2.8vw,1.8rem);letter-spacing:-.01em;margin:1.8rem 0 .8rem}
+article p{margin:0 0 1rem;font-size:1.02rem}
+.pull{border-left:2px solid var(--accent);padding-left:1.2rem;margin:1.6rem 0;max-width:34ch;font-family:"Instrument Serif",Georgia,serif;font-size:1.25rem;line-height:1.45;color:var(--ink)}
+.callout{background:var(--wash);border-radius:10px;padding:1.1rem 1.3rem;margin:1.6rem 0;font-size:.92rem;color:var(--muted)}
+.callout strong{color:var(--ink)}
+figure{margin:1.6rem 0}
+figcaption{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--muted);margin-top:.5rem}
+
+.related{border-top:1px solid var(--rule);padding-top:1.8rem;margin-top:.5rem}
+.related h3{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 1.1rem}
+.relgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem}
+.relcard{text-decoration:none;color:inherit;display:block}
+.relcard .rimg{height:6.5rem;margin-bottom:.7rem}
+.relcard span{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.4rem}
+.relcard p{font-size:.9rem;font-weight:600;margin:0;line-height:1.35}
+@media(max-width:700px){.relgrid{grid-template-columns:1fr}}
+
+footer{background:var(--navy-900);color:rgba(255,255,255,.65);padding:2.5rem 0;font-size:.85rem}
+footer .inner{max-width:56rem;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+footer a{color:rgba(255,255,255,.65)}
+footer a:hover{color:#fff}
+@media(max-width:640px){footer .inner{padding:0 1.25rem}}
+</style>
+</head>
+<body>
+
+<div class="tplbanner">TEMPLATE — copy this file into /articles/, fill in every [STUB] block, then <strong>delete this banner</strong> before publishing.</div>
+
+<nav class="nav">
+  <div class="inner">
+    <a class="mark" href="/">Human <span>Metrix</span></a>
+    <a class="back" href="/#spotlight">All insights</a>
+  </div>
+</nav>
+
+<header class="masthead wrap">
+  <p class="eyebrow">[STUB — category: Health / Method / Data / Economy]</p>
+  <h1>[STUB — Article Title]</h1>
+  <p class="standfirst">[STUB — one to two sentence standfirst summarizing what the reader will learn.]</p>
+  <div class="byline">
+    <span>[STUB — author or "Human Metrix"]</span>
+    <span>[STUB — publish date]</span>
+    <span>[STUB — est. read time, e.g. 6 min read]</span>
+  </div>
+</header>
+
+<div class="wrapwide">
+  <div class="stub hero">
+    <span class="stag">Stub</span>
+    <span class="scap">Replace with a real chart, screenshot, or generated graphic illustrating this article's topic.</span>
+  </div>
+</div>
+
+<article class="wrap">
+  <p>[STUB — opening paragraph. State the question this article answers and why it matters, in one or two sentences.]</p>
+
+  <h2>[STUB — first section heading]</h2>
+  <p>[STUB — body copy. Keep paragraphs short. Cite the specific dataset, survey question, or model output being discussed rather than speaking in generalities.]</p>
+  <p>[STUB — continue the explanation. If a claim depends on a number, state the number and where it comes from.]</p>
+
+  <div class="pull">[STUB — a single pull-quote sentence, the one idea a skimming reader should walk away with.]</div>
+
+  <h2>[STUB — second section heading]</h2>
+  <p>[STUB — body copy.]</p>
+
+  <figure>
+    <div class="stub" style="min-height:14rem">
+      <span class="stag">Stub</span>
+      <span class="scap">Replace with a real chart or data visualization supporting this section.</span>
+    </div>
+    <figcaption>[STUB — figure caption: what the reader is looking at and its source.]</figcaption>
+  </figure>
+
+  <div class="callout"><strong>Method note.</strong> [STUB — one paragraph on data source, sample size, weighting, or a specific limitation relevant to this article. Keep the same honesty standard as the homepage Method section.]</div>
+
+  <h2>[STUB — closing section heading, e.g. "What this does and doesn't tell you"]</h2>
+  <p>[STUB — closing paragraph. State the limits of the analysis directly.]</p>
+</article>
+
+<div class="wrap related">
+  <h3>Related</h3>
+  <div class="relgrid">
+    <a class="relcard" href="#">
+      <div class="stub rimg"><span class="stag">Stub</span></div>
+      <span>[STUB — category]</span>
+      <p>[STUB — related article title]</p>
+    </a>
+    <a class="relcard" href="#">
+      <div class="stub alt1 rimg"><span class="stag">Stub</span></div>
+      <span>[STUB — category]</span>
+      <p>[STUB — related article title]</p>
+    </a>
+    <a class="relcard" href="/models/body-weight.html">
+      <div class="stub alt2 rimg"><span class="stag">Live</span></div>
+      <span>Model</span>
+      <p>Body Weight Model</p>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="inner">
+    <span>&copy; 2026 Human Metrix</span>
+    <span><a href="/">Back to Human Metrix</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

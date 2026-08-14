@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /thanks.html
+Disallow: /articles/template.html
+
+Sitemap: https://humanmetrix.org/sitemap.xml

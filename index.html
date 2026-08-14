@@ -3,169 +3,238 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Human Metrix — Models built from public survey data</title>
-<meta name="description" content="Human Metrix turns national survey data into demographic prediction models anyone can question. Public data, published methods, stated uncertainty.">
-<meta property="og:title" content="Human Metrix">
-<meta property="og:description" content="Models built from public survey data. Methods published, uncertainty stated.">
+<title>Human Metrix — Data Visualization &amp; Modeling</title>
+<meta name="description" content="Human Metrix builds data visualization and predictive modeling tools for individuals and organizations, grounded in public survey data with published methods and stated uncertainty.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://humanmetrix.org/">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:site_name" content="Human Metrix">
+<meta property="og:title" content="Human Metrix — Data Visualization &amp; Modeling">
+<meta property="og:description" content="Data visualization and modeling for people and organizations. Public data, published methods, stated uncertainty.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://humanmetrix.org">
+<meta property="og:url" content="https://humanmetrix.org/">
+<meta property="og:image" content="https://humanmetrix.org/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Human Metrix",
+  "url": "https://humanmetrix.org/",
+  "logo": "https://humanmetrix.org/assets/favicon-32.png",
+  "description": "Human Metrix builds data visualization and predictive modeling tools for individuals and organizations, grounded in public survey data with published methods and stated uncertainty.",
+  "email": "hello@humanmetrix.org"
+}
+</script>
 <style>
 :root{
-  --ink:#10161A;
-  --muted:#5C6B6B;
-  --rule:#E2E6E3;
-  --wash:#F5F7F5;
-  --brand:#1D4A46;
-  --brand-mid:#4E837A;
-  --brand-pale:#CBD8D4;
+  --ink:#0B0E14;
+  --muted:#5B6472;
+  --rule:#E1E5EA;
+  --wash:#F3F5F8;
+  --navy-900:#081B33;
+  --navy-700:#0E2A52;
+  --navy-500:#173F78;
+  --blue-400:#2E6FD9;
+  --blue-200:#BBD3F5;
+  --accent:#B8452D;
+  --paper:#fff;
   --measure:78rem;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{
-  margin:0;background:#fff;color:var(--ink);
+  margin:0;background:var(--paper);color:var(--ink);
   font-family:Inter,system-ui,-apple-system,sans-serif;
-  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;
 }
 a{color:inherit}
+img,svg{max-width:100%;display:block}
 .wrap{max-width:var(--measure);margin:0 auto;padding:0 2rem}
 @media(max-width:640px){.wrap{padding:0 1.25rem}}
 
 /* ---------- nav ---------- */
-.nav{
-  border-bottom:1px solid var(--rule);position:sticky;top:0;background:#fff;z-index:20;
-}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:4.5rem}
-.mark{
-  font-weight:700;letter-spacing:-.02em;font-size:1.15rem;text-decoration:none;
-  display:flex;align-items:baseline;gap:.45rem;
-}
-.mark span{color:var(--brand)}
-.mark em{
-  font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:.6rem;
-  letter-spacing:.16em;color:var(--muted);text-transform:uppercase;
-}
-.nav ul{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
-.nav a{
-  text-decoration:none;font-size:.92rem;font-weight:500;color:var(--muted);
-  padding:.3rem 0;border-bottom:2px solid transparent;
-}
-.nav a:hover{color:var(--ink);border-color:var(--brand)}
-.nav a:focus-visible{outline:2px solid var(--brand);outline-offset:4px}
-@media(max-width:640px){.nav ul{gap:1.1rem}.nav a{font-size:.82rem}}
+.nav{border-bottom:1px solid rgba(255,255,255,.14);position:sticky;top:0;background:var(--navy-900);z-index:30}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:3.6rem;gap:1.5rem}
+.mark{font-weight:800;letter-spacing:-.02em;font-size:1.05rem;text-decoration:none;color:#fff;display:flex;align-items:baseline;gap:.4rem;flex:0 0 auto}
+.mark span{color:var(--blue-200)}
+.mark em{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:.58rem;letter-spacing:.16em;color:rgba(255,255,255,.55);text-transform:uppercase}
+.nav ul{display:flex;gap:1.7rem;list-style:none;margin:0;padding:0}
+.nav a.navlink{text-decoration:none;font-size:.86rem;font-weight:500;color:rgba(255,255,255,.75);padding:.3rem 0;border-bottom:2px solid transparent}
+.nav a.navlink:hover{color:#fff;border-color:var(--blue-200)}
+.navcta{display:flex;gap:.7rem;flex:0 0 auto}
+.nbtn{display:inline-block;text-decoration:none;font-size:.78rem;font-weight:600;padding:.5rem .95rem;border-radius:999px;white-space:nowrap}
+.nbtn.solid{background:#fff;color:var(--navy-900)}
+.nbtn.solid:hover{background:var(--blue-200)}
+@media(max-width:900px){.nav ul{display:none}}
 
 /* ---------- hero ---------- */
-.hero{padding:6rem 0 5rem;border-bottom:1px solid var(--rule)}
-.hero h1{
-  font-size:clamp(2.1rem,5.2vw,4rem);line-height:1.1;letter-spacing:-.03em;
-  font-weight:600;margin:0;max-width:20ch;
-}
-.hero p{
-  max-width:44ch;color:var(--muted);font-size:1.1rem;margin:2rem 0 0;
-}
-.hero .cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.5rem}
-.btn{
-  display:inline-block;text-decoration:none;font-size:.92rem;font-weight:500;
-  padding:.8rem 1.5rem;border:1.5px solid var(--brand);
-}
-.btn.solid{background:var(--brand);color:#fff}
-.btn.solid:hover{background:#143734}
-.btn.ghost{color:var(--brand)}
-.btn.ghost:hover{background:var(--wash)}
-.btn:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+.hero{background:linear-gradient(150deg,var(--navy-900) 0%,var(--navy-700) 45%,var(--navy-500) 78%,var(--blue-400) 130%);color:#fff;padding:2.75rem 0 0}
+.herorow{display:grid;grid-template-columns:1.05fr .95fr;gap:2.5rem;align-items:center;padding-bottom:2.5rem}
+.hero .eyebrow-lt{font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-200);margin:0 0 .8rem}
+.hero h1{font-size:clamp(1.9rem,4.2vw,3rem);line-height:1.1;letter-spacing:-.03em;font-weight:800;margin:0;max-width:19ch}
+.hero p{max-width:44ch;color:rgba(255,255,255,.82);font-size:1rem;margin:1.1rem 0 0}
+.hero .cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem}
+.btn{display:inline-block;text-decoration:none;font-size:.86rem;font-weight:600;padding:.65rem 1.25rem;border-radius:999px;border:1.5px solid transparent}
+.btn.solid{background:#fff;color:var(--navy-900)}
+.btn.solid:hover{background:var(--blue-200)}
+.btn.ghost{border-color:rgba(255,255,255,.5);color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.btn.dark{background:var(--navy-900);color:#fff}
+.btn.dark:hover{background:#02101f}
+.btn:focus-visible,.nbtn:focus-visible,.navlink:focus-visible{outline:2px solid var(--blue-200);outline-offset:3px}
 
-/* ---------- sections ---------- */
-section{padding:5rem 0;border-bottom:1px solid var(--rule)}
-.eyebrow{
-  font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--brand-mid);margin:0 0 1rem;
-}
-h2{
-  font-size:clamp(1.6rem,3.4vw,2.5rem);letter-spacing:-.02em;font-weight:600;
-  margin:0 0 1rem;max-width:24ch;line-height:1.15;
-}
-.lede{color:var(--muted);max-width:52ch;margin:0 0 3rem;font-size:1.02rem}
+/* generated "photo" stand-ins */
+.stub{position:relative;overflow:hidden;border-radius:12px;border:1.5px dashed rgba(255,255,255,.35);
+  background:linear-gradient(135deg,var(--navy-700),var(--blue-400));min-height:150px}
+.stub::before{content:"";position:absolute;inset:0;opacity:.5;
+  background-image:repeating-linear-gradient(118deg,rgba(255,255,255,.08) 0 2px,transparent 2px 24px);}
+.stub .stag{position:absolute;top:.6rem;left:.6rem;font-family:"IBM Plex Mono",monospace;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(0,0,0,.4);color:#fff;padding:.28rem .5rem;border:1px solid rgba(255,255,255,.3);border-radius:4px;z-index:2}
+.stub .scap{position:absolute;bottom:.65rem;left:.65rem;right:.65rem;font-family:"IBM Plex Mono",monospace;font-size:.64rem;line-height:1.35;color:#EAF1FC;opacity:.9;z-index:2}
+.stub.alt1{background:linear-gradient(150deg,var(--navy-900),var(--navy-500))}
+.stub.alt2{background:linear-gradient(150deg,var(--blue-400),var(--navy-700))}
+.stub.alt3{background:linear-gradient(160deg,var(--navy-500),var(--accent))}
+.stub.play{display:flex;align-items:center;justify-content:center}
+.playbtn{width:3.2rem;height:3.2rem;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;z-index:2}
+.playbtn::after{content:"";border-left:13px solid var(--navy-900);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:3px}
 
-/* ---------- pillars ---------- */
-.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem}
-.pillar{border-top:2px solid var(--brand);padding-top:1.4rem}
-.pillar h3{font-size:1.12rem;margin:0 0 .7rem;font-weight:600;letter-spacing:-.01em}
-.pillar p{margin:0;color:var(--muted);font-size:.95rem}
-@media(max-width:820px){.pillars{grid-template-columns:1fr;gap:2rem}}
+/* ---------- build module (tabs) ---------- */
+.build{background:linear-gradient(150deg,var(--navy-500) 0%,var(--blue-400) 100%);padding-bottom:0}
+.buildhead{display:flex;flex-direction:column;align-items:center;text-align:center;padding-bottom:1.1rem}
+.buildhead h2{color:#fff;margin-bottom:.3rem}
+.tabs{display:inline-flex;gap:.3rem;background:rgba(255,255,255,.14);padding:.28rem;border-radius:999px;margin-top:.7rem}
+.tab{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;
+  background:transparent;border:0;color:rgba(255,255,255,.8);padding:.5rem 1.05rem;border-radius:999px;cursor:pointer}
+.tab.active{background:#fff;color:var(--navy-900)}
+.tab:focus-visible{outline:2px solid #fff;outline-offset:2px}
+
+.buildcard{background:#fff;border-radius:16px 16px 0 0;margin-top:1.4rem;padding:2rem 2rem 2.4rem;
+  display:grid;grid-template-columns:.85fr 2fr;gap:2rem}
+.buildintro .itag{font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem}
+.buildintro h3{font-size:1.25rem;font-weight:700;letter-spacing:-.015em;margin:0 0 .6rem;line-height:1.25}
+.buildintro p{color:var(--muted);font-size:.9rem;margin:0}
+.tilerow{display:flex;gap:.9rem;overflow-x:auto;padding-bottom:.4rem;scroll-snap-type:x proximity}
+.tile{flex:0 0 10.5rem;height:10.5rem;border-radius:10px;position:relative;overflow:hidden;text-decoration:none;color:#fff;
+  display:flex;flex-direction:column;justify-content:flex-end;padding:.85rem;scroll-snap-align:start}
+.tile .ttag{font-family:"IBM Plex Mono",monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85;margin-bottom:.25rem}
+.tile .tname{font-weight:700;font-size:.95rem;line-height:1.2;letter-spacing:-.01em}
+.tile.g1{background:linear-gradient(160deg,var(--navy-900),var(--blue-400))}
+.tile.g2{background:linear-gradient(160deg,var(--navy-700),var(--accent))}
+.tile.g3{background:linear-gradient(160deg,var(--blue-400),var(--navy-500))}
+.tile.g4{background:linear-gradient(160deg,var(--accent),var(--navy-900))}
+.tile.g5{background:linear-gradient(160deg,var(--navy-500),var(--navy-900))}
+.tile.g6{background:linear-gradient(160deg,var(--blue-400),var(--accent))}
+.tile.soon::after{content:"Planned";position:absolute;top:.6rem;right:.6rem;font-family:"IBM Plex Mono",monospace;font-size:.53rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(0,0,0,.35);padding:.18rem .45rem;border-radius:3px}
+@media(max-width:820px){.buildcard{grid-template-columns:1fr;gap:1.2rem;padding:1.6rem 1.25rem 2rem}}
+
+/* ---------- generic sections ---------- */
+section{padding:3.25rem 0;border-bottom:1px solid var(--rule)}
+.shead{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;margin-bottom:1.8rem;flex-wrap:wrap}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 .7rem}
+h2{font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-.02em;font-weight:700;margin:0;max-width:26ch;line-height:1.15}
+.more{font-size:.83rem;font-weight:600;text-decoration:none;color:var(--navy-700);white-space:nowrap}
+.more:hover{color:var(--accent)}
+.lede{color:var(--muted);max-width:52ch;margin:.6rem 0 0;font-size:.98rem}
 
 /* ---------- spotlight ---------- */
-.spotlight{
-  display:grid;grid-template-columns:1.15fr 1fr;gap:4rem;align-items:center;
-}
-.spotlight h3{
-  font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-.02em;margin:.4rem 0 1rem;
-  font-weight:600;line-height:1.2;
-}
-.spotlight p{color:var(--muted);margin:0 0 1.6rem}
-.stats{display:flex;gap:2.5rem;margin:2rem 0;flex-wrap:wrap}
-.stat b{
-  display:block;font-family:"IBM Plex Mono",monospace;font-size:1.7rem;
-  font-weight:500;letter-spacing:-.02em;color:var(--brand);
-}
-.stat span{font-size:.78rem;color:var(--muted)}
-.viz{background:var(--wash);padding:2.2rem}
-.viz .vlabel{
-  font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--muted);margin-bottom:.55rem;
-}
-.ribbon{display:flex;height:2.6rem;overflow:hidden}
-.ribbon i{
-  font-style:normal;display:flex;align-items:center;justify-content:center;
-  font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:#fff;
-}
-.ribbon i:nth-child(1){background:var(--brand-pale);color:var(--ink)}
-.ribbon i:nth-child(2){background:#93B6AE;color:var(--ink)}
-.ribbon i:nth-child(3){background:var(--brand-mid)}
-.ribbon i:nth-child(4){background:var(--brand)}
-.vnote{font-size:.78rem;color:var(--muted);margin-top:1rem}
-@media(max-width:900px){.spotlight{grid-template-columns:1fr;gap:2.5rem}}
+.spot2{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin-bottom:1.8rem}
+.scard{text-decoration:none;color:inherit;display:block}
+.scard .simg{height:11.5rem;margin-bottom:.8rem}
+.scard .stag{position:static;display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 .4rem;background:none;border:0;padding:0}
+.scard h3{font-size:clamp(1.1rem,2.1vw,1.4rem);font-weight:700;letter-spacing:-.015em;margin:0 0 .5rem;line-height:1.28}
+.scard p{color:var(--muted);font-size:.9rem;margin:0}
+.badge-soon{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--muted);padding:.18rem .45rem;border-radius:3px;margin-left:.4rem;vertical-align:middle}
+.spot3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.spot3 .scard .simg{height:7.5rem}
+.spot3 h3{font-size:1rem}
+@media(max-width:900px){.spot2,.spot3{grid-template-columns:1fr;gap:1.4rem}}
 
-/* ---------- model grid ---------- */
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
-.card{
-  display:flex;flex-direction:column;text-decoration:none;
-  border-top:1px solid var(--rule);padding-top:1.3rem;
-}
-a.card:hover h3{color:var(--brand)}
-.card .tag{
-  font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--brand-mid);margin-bottom:.7rem;
-}
-.card.soon .tag{color:var(--muted)}
-.card h3{font-size:1.16rem;font-weight:600;letter-spacing:-.015em;margin:0 0 .6rem;line-height:1.25}
-.card p{margin:0;color:var(--muted);font-size:.92rem}
-.card .src{
-  font-family:"IBM Plex Mono",monospace;font-size:.66rem;color:var(--muted);
-  margin-top:1rem;padding-top:.7rem;border-top:1px solid var(--rule);
-}
-.card.soon{opacity:.62}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);gap:2rem}}
-@media(max-width:620px){.grid{grid-template-columns:1fr}}
+/* live data ribbon (real, not a stub) */
+.liveribbon{border-radius:12px;overflow:hidden;background:var(--wash);padding:1rem 1rem .8rem}
+.liveribbon .rlabel{font-family:"IBM Plex Mono",monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.ribbon{display:flex;height:2.1rem;overflow:hidden;border-radius:6px}
+.ribbon i{font-style:normal;display:flex;align-items:center;justify-content:center;font-family:"IBM Plex Mono",monospace;font-size:.68rem;color:#fff}
+.ribbon i:nth-child(1){background:var(--blue-200);color:var(--ink)}
+.ribbon i:nth-child(2){background:#8FB4E8;color:var(--ink)}
+.ribbon i:nth-child(3){background:var(--blue-400)}
+.ribbon i:nth-child(4){background:var(--navy-700)}
 
-/* ---------- method ---------- */
-.method{background:var(--wash);border-bottom:1px solid var(--rule)}
-.method .wrap{padding-top:5rem;padding-bottom:5rem}
-.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
-.mgrid p{color:var(--muted);font-size:.95rem;margin:0 0 1.1rem;max-width:50ch}
-.mgrid strong{color:var(--ink);font-weight:600}
-@media(max-width:820px){.mgrid{grid-template-columns:1fr;gap:1rem}}
+/* ---------- dark carousel ---------- */
+.darkband{background:var(--navy-900);color:#fff;border-bottom:0}
+.darkband h2{color:#fff}
+.darkband .lede{color:rgba(255,255,255,.65)}
+.dcarousel{display:flex;gap:1.1rem;overflow-x:auto;padding-bottom:.5rem;margin-top:1.6rem;scroll-snap-type:x proximity}
+.dcard{flex:0 0 14rem;height:11.5rem;border-radius:10px;position:relative;overflow:hidden;padding:.9rem;
+  display:flex;flex-direction:column;justify-content:flex-end;scroll-snap-align:start;border:1.5px dashed rgba(255,255,255,.3)}
+.dcard .dread{font-family:"IBM Plex Mono",monospace;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:.4rem}
+.dcard h4{margin:0;font-size:.96rem;font-weight:700;line-height:1.3;letter-spacing:-.01em}
+
+/* ---------- discover ---------- */
+.discover2{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.dcol .dcolhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem}
+.dcol h3{font-size:1.1rem;font-weight:700;margin:0;letter-spacing:-.01em}
+.dcol .dbig{text-decoration:none;color:inherit;display:block;margin-bottom:1.1rem}
+.dcol .dbig .simg{height:5.5rem;margin-bottom:.7rem}
+.dcol .dbig h4{font-size:1.08rem;font-weight:700;margin:0 0 .3rem;letter-spacing:-.01em;line-height:1.28}
+.dcol .dbig p{color:var(--muted);font-size:.88rem;margin:0}
+.dsmalls{display:grid;grid-template-columns:1fr 1fr;gap:.8rem 1.2rem}
+.dsmall{border-top:1px solid var(--rule);padding-top:.65rem}
+.dsmall .dtag{font-family:"IBM Plex Mono",monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem}
+.dsmall a{text-decoration:none;color:var(--ink);font-size:.88rem;font-weight:600;line-height:1.35}
+.dsmall a:hover{color:var(--navy-700)}
+@media(max-width:820px){.discover2{grid-template-columns:1fr;gap:1.8rem}.dsmalls{grid-template-columns:1fr}}
+
+/* ---------- newsletter ---------- */
+.newsband{background:linear-gradient(120deg,var(--navy-900),var(--navy-500));color:#fff;border-bottom:0}
+.newsrow{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.newsrow h3{margin:0 0 .3rem;font-size:1.2rem;font-weight:700}
+.newsrow p{margin:0;color:rgba(255,255,255,.72);max-width:38ch;font-size:.9rem}
+.newsform{display:flex;gap:.6rem;flex-wrap:wrap}
+.newsform input{padding:.65rem .95rem;border-radius:999px;border:1.5px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);color:#fff;font-size:.86rem;min-width:14rem}
+.newsform input::placeholder{color:rgba(255,255,255,.55)}
+.newsnote{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.06em;color:rgba(255,255,255,.5);margin-top:.6rem}
+.hp{position:absolute;left:-9999px;top:-9999px}
+
+/* ---------- solutions ---------- */
+.resgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.rescard{border-radius:14px;padding:1.6rem;color:#fff;display:flex;flex-direction:column;min-height:10.5rem}
+.rescard.blue{background:linear-gradient(150deg,var(--navy-700),var(--blue-400))}
+.rescard.dark{background:var(--navy-900)}
+.rescard .rtag{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-200);margin:0 0 .6rem}
+.rescard h3{font-size:1.2rem;font-weight:700;margin:0 0 .6rem;letter-spacing:-.01em}
+.rescard p{color:rgba(255,255,255,.75);font-size:.9rem;margin:0 0 1.1rem;flex:1}
+.rescard a{color:#fff;font-size:.84rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem}
+.rescard a:hover{color:var(--blue-200)}
+@media(max-width:820px){.resgrid{grid-template-columns:1fr}}
+
+/* ---------- about ---------- */
+.aboutnote{color:var(--muted);font-size:.9rem;margin-top:.9rem}
+.aboutnote a{color:var(--navy-700);font-weight:600;text-decoration:none}
+.aboutnote a:hover{color:var(--accent)}
 
 /* ---------- footer ---------- */
-footer{padding:3.5rem 0 4rem;font-size:.86rem;color:var(--muted)}
-.frow{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-footer a{color:var(--muted)}
-.disclaimer{
-  margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);
-  max-width:62ch;font-size:.8rem;
-}
+footer{background:var(--navy-900);color:rgba(255,255,255,.7);padding-top:2.75rem}
+.fgrid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:1.8rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.14)}
+.fgrid h4{color:#fff;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-family:"IBM Plex Mono",monospace;margin:0 0 .9rem}
+.fgrid ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem}
+.fgrid a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.86rem}
+.fgrid a:hover{color:#fff}
+.fabout p{color:rgba(255,255,255,.62);font-size:.86rem;max-width:32ch;margin:0 0 .9rem}
+.social{display:flex;gap:.6rem}
+.social a{width:1.9rem;height:1.9rem;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:.68rem;font-family:"IBM Plex Mono",monospace}
+.social a:hover{background:rgba(255,255,255,.1)}
+.frow{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;padding:1.4rem 0;font-size:.8rem}
+.disclaimer{padding:0 0 2rem;max-width:62rem;font-size:.76rem;color:rgba(255,255,255,.5)}
+@media(max-width:820px){.fgrid{grid-template-columns:1fr 1fr;gap:1.6rem 1.2rem}}
+@media(max-width:560px){.fgrid{grid-template-columns:1fr}}
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
@@ -175,136 +244,217 @@ footer a{color:var(--muted)}
   <div class="wrap">
     <a class="mark" href="/">Human <span>Metrix</span><em>.org</em></a>
     <ul>
-      <li><a href="#models">Models</a></li>
-      <li><a href="#method">Method</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a class="navlink" href="#build">Models</a></li>
+      <li><a class="navlink" href="#discover">Discover</a></li>
+      <li><a class="navlink" href="#resources">Solutions</a></li>
+      <li><a class="navlink" href="#about">About</a></li>
     </ul>
+    <div class="navcta">
+      <a class="nbtn solid" href="#newsletter">Get updates</a>
+    </div>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="wrap">
-    <h1>Turning the surveys that measure America into models anyone can question.</h1>
-    <p>Every year, federal agencies phone, mail and measure hundreds of thousands of Americans. The results sit in public files that almost nobody opens. We open them.</p>
-    <div class="cta">
-      <a class="btn solid" href="/models/body-weight.html">Try the weight model</a>
-      <a class="btn ghost" href="#method">How this works</a>
+  <div class="wrap herorow">
+    <div>
+      <p class="eyebrow-lt">Data visualization &amp; modeling</p>
+      <h1>Data visualization and modeling for people and organizations.</h1>
+      <p>Human Metrix designs data visualizations and predictive modeling tools that turn large, public datasets into products individuals can use and organizations can build on &mdash; delivered with published methodology and clearly stated uncertainty.</p>
+      <div class="cta">
+        <a class="btn solid" href="#discover">Explore our models</a>
+        <a class="btn ghost" href="#build">Our approach</a>
+      </div>
+    </div>
+    <div class="stub play" role="img" aria-label="Placeholder for a company walkthrough video">
+      <div class="playbtn"></div>
+      <span class="stag">Stub</span>
+      <span class="scap">Replace with: a short company overview video or product screenshot showing a model in use.</span>
     </div>
   </div>
 </header>
 
-<section>
+<section class="build" id="build">
   <div class="wrap">
-    <p class="eyebrow">How we work</p>
-    <h2>Three commitments that shape every model on this site</h2>
-    <div class="pillars">
-      <div class="pillar">
-        <h3>Public data only</h3>
-        <p>Every model is built from public-use files — CDC BRFSS, NHANES, the American Community Survey. Nothing proprietary, nothing behind a paywall, nothing you cannot download and check yourself.</p>
+    <div class="buildhead">
+      <p class="eyebrow-lt" style="color:rgba(255,255,255,.7)">How we work</p>
+      <h2>From raw data to a product you can question</h2>
+      <div class="tabs" role="tablist" aria-label="Build module">
+        <button class="tab active" data-tab="models" role="tab" aria-selected="true">Models</button>
+        <button class="tab" data-tab="data" role="tab" aria-selected="false">Data sources</button>
+        <button class="tab" data-tab="method" role="tab" aria-selected="false">Method</button>
       </div>
-      <div class="pillar">
-        <h3>Methods in the open</h3>
-        <p>The fitting script ships alongside the model. Coefficients are published as plain JSON. If you disagree with a specification, you have everything you need to refit it and show us we were wrong.</p>
+    </div>
+    <div class="buildcard">
+      <div class="buildintro">
+        <p class="itag" id="tabtag">Models</p>
+        <h3 id="tabtitle">One module live, five in development</h3>
+        <p id="tabbody">Human Metrix develops data visualization and modeling modules across health, economic and demographic indicators. Each module is released only once its methodology, coefficients and calibration results are published alongside it.</p>
       </div>
-      <div class="pillar">
-        <h3>Uncertainty stated first</h3>
-        <p>Each model reports how much better it does than simply guessing the national average. Often the answer is: not much. That belongs on the page, not buried in a footnote.</p>
-      </div>
+      <div class="tilerow" id="tilerow"></div>
     </div>
   </div>
 </section>
 
-<section>
+<section id="spotlight">
   <div class="wrap">
-    <p class="eyebrow">Spotlight</p>
-    <div class="spotlight">
+    <div class="shead">
       <div>
-        <h3>What 414,633 phone calls reveal about American body weight</h3>
-        <p>The CDC asks a third of a million adults their height and weight every year. Describe someone — age, race, income, schooling, exercise, state — and this model reports the weight distribution the survey would expect for people who answered the same way.</p>
-        <p>It also shows you how little that prediction actually moves.</p>
-        <div class="stats">
-          <div class="stat"><b>414,633</b><span>respondents</span></div>
-          <div class="stat"><b>18</b><span>characteristics</span></div>
-          <div class="stat"><b>5%</b><span>better than guessing</span></div>
-        </div>
-        <a class="btn solid" href="/models/body-weight.html">Open the model</a>
+        <p class="eyebrow">Insights</p>
+        <h2>Selected work from our modeling practice</h2>
       </div>
-      <div class="viz">
-        <div class="vlabel">All US adults, 2024</div>
-        <div class="ribbon">
-          <i style="flex:2.3"></i><i style="flex:30.5">31%</i><i style="flex:34">34%</i><i style="flex:33.2">33%</i>
-        </div>
-        <p class="vnote">Underweight, normal, overweight and obese, as self-reported to the Behavioral Risk Factor Surveillance System. Measured studies put the obese share closer to 40% — the gap is what people tell strangers on the phone.</p>
-      </div>
+      <a class="more" href="#build">All models &rarr;</a>
     </div>
-  </div>
-</section>
 
-<section id="models">
-  <div class="wrap">
-    <p class="eyebrow">Models</p>
-    <h2>What we have built, and what is coming</h2>
-    <p class="lede">Each model is a single page that runs entirely in your browser. Nothing you type is sent anywhere.</p>
-    <div class="grid">
-
-      <a class="card" href="/models/body-weight.html">
-        <div class="tag">Live &middot; Health</div>
-        <h3>How to predict how fat someone is</h3>
-        <p>Weight category probabilities from eighteen demographic and behavioural characteristics, weighted to the US adult population.</p>
-        <div class="src">CDC BRFSS 2024</div>
+    <div class="spot2">
+      <a class="scard" href="/models/body-weight.html">
+        <div class="liveribbon simg">
+          <div class="rlabel">All US adults, 2024 &middot; self-reported</div>
+          <div class="ribbon">
+            <i style="flex:2.3"></i><i style="flex:30.5">31%</i><i style="flex:34">34%</i><i style="flex:33.2">33%</i>
+          </div>
+        </div>
+        <p class="stag">Health &amp; behavior &middot; Live</p>
+        <h3>Predicting body weight categories from public health survey data</h3>
+        <p>A demographic and behavioral profile &mdash; age, race, income, education, activity level and state &mdash; returns the weight-category distribution our model predicts, alongside a measure of how much that prediction actually differs from the national average.</p>
       </a>
 
-      <div class="card soon">
-        <div class="tag">Planned</div>
-        <h3>Who has health insurance and who does not</h3>
-        <p>Coverage probability by state, income, employment and age — including the coverage cliffs at 26 and 65.</p>
-        <div class="src">CDC BRFSS · ACS</div>
-      </div>
+      <a class="scard" href="#">
+        <div class="stub alt1 simg">
+          <span class="stag">Stub</span>
+          <span class="scap">Article not yet written &mdash; explains how federal surveys correct for oversampling using statistical weights, and how Human Metrix applies the same correction.</span>
+        </div>
+        <p class="stag">Method<span class="badge-soon">Coming soon</span></p>
+        <h3>How survey weighting produces a national estimate</h3>
+        <p>An overview of how federal surveys oversample certain populations by design, and how that is corrected for using a statistical weight applied throughout every Human Metrix model.</p>
+      </a>
+    </div>
 
-      <div class="card soon">
-        <div class="tag">Planned</div>
-        <h3>How many bad mental health days</h3>
-        <p>The survey asks how many days in the past month your mental health was not good. The demographic pattern is sharper than most people expect.</p>
-        <div class="src">CDC BRFSS 2024</div>
-      </div>
-
-      <div class="card soon">
-        <div class="tag">Planned</div>
-        <h3>Who still smokes</h3>
-        <p>Smoking has collapsed nationally but not evenly. This model shows where it held on.</p>
-        <div class="src">CDC BRFSS 2024</div>
-      </div>
-
-      <div class="card soon">
-        <div class="tag">Planned</div>
-        <h3>What a household actually earns</h3>
-        <p>Income distribution by occupation, education, geography and age, from the census microdata sample.</p>
-        <div class="src">ACS PUMS</div>
-      </div>
-
-      <div class="card soon">
-        <div class="tag">Planned</div>
-        <h3>Self-reported versus measured</h3>
-        <p>Two federal surveys ask the same question, one by phone and one with a scale. The difference between them is a map of how Americans lie.</p>
-        <div class="src">BRFSS vs NHANES</div>
-      </div>
-
+    <div class="spot3">
+      <a class="scard" href="#">
+        <div class="stub alt2 simg"><span class="stag">Stub</span><span class="scap">Article: how BMI thresholds vary in applicability across populations.</span></div>
+        <p class="stag">Health<span class="badge-soon">Soon</span></p>
+        <h3>Understanding BMI across different populations</h3>
+      </a>
+      <a class="scard" href="#">
+        <div class="stub alt3 simg"><span class="stag">Stub</span><span class="scap">Article: a plain-language guide to reading model coefficients.</span></div>
+        <p class="stag">Method<span class="badge-soon">Soon</span></p>
+        <h3>How to interpret a model&rsquo;s coefficients</h3>
+      </a>
+      <a class="scard" href="#">
+        <div class="stub simg"><span class="stag">Stub</span><span class="scap">Article: comparing self-reported survey responses to measured clinical data.</span></div>
+        <p class="stag">Data<span class="badge-soon">Soon</span></p>
+        <h3>Comparing self-reported and measured survey data</h3>
+      </a>
     </div>
   </div>
 </section>
 
-<section class="method" id="method">
+<section class="darkband" id="sources">
   <div class="wrap">
-    <p class="eyebrow">Method</p>
-    <h2>What these models can and cannot tell you</h2>
-    <div class="mgrid">
+    <div class="shead">
       <div>
-        <p><strong>They describe groups, not people.</strong> A model that knows your age, income and state knows almost nothing about you specifically. It knows what the average of everyone who answered identically looks like. Those are very different claims, and the second one is the only one we make.</p>
-        <p><strong>Survey weights are applied throughout.</strong> Federal surveys oversample some groups and undersample others by design. Every figure here is weighted back to the national population, which is why our numbers match published CDC estimates rather than the raw file.</p>
+        <p class="eyebrow" style="color:var(--blue-200)">Data sources</p>
+        <h2>The data behind our models</h2>
+        <p class="lede">Detailed documentation for each dataset is in development. The following is a summary of each source and how it is used.</p>
       </div>
+    </div>
+    <div class="dcarousel">
+      <div class="dcard g1" style="background:linear-gradient(160deg,var(--navy-700),var(--blue-400))">
+        <div class="dread">Stub &middot; documentation planned</div>
+        <h4>CDC BRFSS: source for our health and behavioral models</h4>
+      </div>
+      <div class="dcard" style="background:linear-gradient(160deg,var(--navy-500),var(--accent))">
+        <div class="dread">Stub &middot; documentation planned</div>
+        <h4>NHANES: physical examination data used for validation</h4>
+      </div>
+      <div class="dcard" style="background:linear-gradient(160deg,var(--blue-400),var(--navy-900))">
+        <div class="dread">Stub &middot; documentation planned</div>
+        <h4>ACS PUMS: census microdata for economic and demographic models</h4>
+      </div>
+      <div class="dcard" style="background:linear-gradient(160deg,var(--navy-900),var(--navy-500))">
+        <div class="dread">Stub &middot; documentation planned</div>
+        <h4>Survey weighting: adjusting sample data to represent the population</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="discover">
+  <div class="wrap">
+    <div class="shead">
       <div>
-        <p><strong>Correlation is all a cross-section can give you.</strong> These surveys photograph a population once. When exercise and body weight move together, nothing in the data says which came first, and we do not pretend otherwise.</p>
-        <p><strong>Self-reported data carries self-reported error.</strong> People shave weight and add height. Where a measured comparison exists, we show it rather than quietly hoping you do not notice.</p>
+        <p class="eyebrow">Discover</p>
+        <h2>Explore our modeling portfolio</h2>
+      </div>
+    </div>
+    <div class="discover2">
+      <div class="dcol">
+        <div class="dcolhead"><h3>Health &amp; Behavior</h3><a class="more" href="/models/body-weight.html">View more &rarr;</a></div>
+        <a class="dbig" href="/models/body-weight.html">
+          <div class="liveribbon simg" style="height:5.5rem">
+            <div class="rlabel">Live model</div>
+            <div class="ribbon"><i style="flex:2.3"></i><i style="flex:30.5">31%</i><i style="flex:34">34%</i><i style="flex:33.2">33%</i></div>
+          </div>
+          <h4>Body Weight Model</h4>
+          <p>Predicts weight-category distribution from demographic and behavioral inputs. Available now.</p>
+        </a>
+        <div class="dsmalls">
+          <div class="dsmall"><span class="dtag">Planned</span><a href="#build">Mental Health Days Model</a></div>
+          <div class="dsmall"><span class="dtag">Planned</span><a href="#build">Smoking Prevalence Model</a></div>
+        </div>
+      </div>
+      <div class="dcol">
+        <div class="dcolhead"><h3>Economy &amp; Demographics</h3><a class="more" href="#build">View more &rarr;</a></div>
+        <a class="dbig" href="#build">
+          <div class="stub alt2 simg" style="height:5.5rem"><span class="stag">Stub</span><span class="scap">Planned model &mdash; not built yet.</span></div>
+          <h4>Household Income Model<span class="badge-soon">Planned</span></h4>
+          <p>Predicts income distribution using occupation, education, geography and age from public census microdata.</p>
+        </a>
+        <div class="dsmalls">
+          <div class="dsmall"><span class="dtag">Planned</span><a href="#build">Health Insurance Coverage Model</a></div>
+          <div class="dsmall"><span class="dtag">Planned</span><a href="#build">Self-Reported vs. Measured Comparison</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsband" id="newsletter">
+  <div class="wrap newsrow">
+    <div>
+      <h3>Stay informed about new releases</h3>
+      <p>Receive an update whenever a new model is published. No recurring newsletter, no spam.</p>
+    </div>
+    <div>
+      <form class="newsform" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+        <input type="hidden" name="form-name" value="newsletter">
+        <p class="hp"><label>Leave this field blank: <input name="bot-field"></label></p>
+        <input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required>
+        <button class="btn solid" type="submit">Subscribe</button>
+      </form>
+      <p class="newsnote">Submissions are handled by Netlify Forms &mdash; view them under Forms in your Netlify site dashboard.</p>
+    </div>
+  </div>
+</section>
+
+<section id="resources">
+  <div class="wrap">
+    <p class="eyebrow">Solutions</p>
+    <h2>Built for individuals and organizations</h2>
+    <p class="lede">Human Metrix models are available as free interactive tools, and as a foundation for custom data visualization and modeling engagements.</p>
+    <div class="resgrid" style="margin-top:1.6rem">
+      <div class="rescard blue">
+        <p class="rtag">For organizations</p>
+        <h3>Custom modules for your data</h3>
+        <p>We design tailored data visualization and predictive modeling tools for organizations working with survey, administrative or proprietary datasets.</p>
+        <a href="mailto:hello@humanmetrix.org">Contact us &rarr;</a>
+      </div>
+      <div class="rescard dark">
+        <p class="rtag">Data &amp; methodology</p>
+        <h3>Public data, documented methods</h3>
+        <p>Every model is built on public-use datasets and a documented methodology, available for review by anyone who wants to check our work.</p>
+        <a href="#sources">View our data sources &rarr;</a>
       </div>
     </div>
   </div>
@@ -313,25 +463,116 @@ footer a{color:var(--muted)}
 <section id="about">
   <div class="wrap">
     <p class="eyebrow">About</p>
-    <h2>An independent project, not an institution</h2>
-    <p class="lede">Human Metrix is an independent effort to make federal survey data legible to people who will never open a SAS transport file. No funding, no affiliation with any agency whose data appears here, and no interest in telling you what to conclude.</p>
-    <a class="btn ghost" href="mailto:hello@humanmetrix.org">Get in touch</a>
+    <h2>About Human Metrix</h2>
+    <p class="lede">Human Metrix is an independent company that builds data visualization and predictive modeling tools. We work with public survey and administrative data to help individuals explore population-level trends, and to help organizations build reliable, transparent models on a public data foundation.</p>
+    <p class="aboutnote">For details on how we handle information submitted through this site, see our <a href="/privacy.html">Privacy Policy</a>.</p>
+    <div class="cta">
+      <a class="btn dark" href="mailto:hello@humanmetrix.org">Contact us</a>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="frow">
-      <div>&copy; 2026 Human Metrix</div>
+    <div class="fgrid">
+      <div class="fabout">
+        <a class="mark" href="/" style="margin-bottom:.8rem;display:inline-flex">Human <span>Metrix</span></a>
+        <p>Data visualization and modeling tools for people and organizations.</p>
+        <div class="social">
+          <a href="mailto:hello@humanmetrix.org" aria-label="Email" title="Email">@</a>
+        </div>
+      </div>
       <div>
-        <a href="#models">Models</a> &nbsp;&middot;&nbsp;
-        <a href="#method">Method</a> &nbsp;&middot;&nbsp;
-        <a href="mailto:hello@humanmetrix.org">Contact</a>
+        <h4>About</h4>
+        <ul>
+          <li><a href="#about">Who we are</a></li>
+          <li><a href="#build">Our approach</a></li>
+          <li><a href="#sources">Data sources</a></li>
+          <li><a href="mailto:hello@humanmetrix.org">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Models</h4>
+        <ul>
+          <li><a href="/models/body-weight.html">Body Weight Model</a></li>
+          <li><a href="#build">All models</a></li>
+          <li><a href="#discover">Discover by topic</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#resources">Solutions</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+        </ul>
       </div>
     </div>
-    <p class="disclaimer">Nothing on this site is medical advice, and no model here diagnoses anything. BMI in particular is a population-level measure that cannot distinguish muscle from fat and was calibrated on largely European populations. If you have a question about your own health, ask a clinician, not a regression.</p>
+    <div class="frow">
+      <div>&copy; 2026 Human Metrix</div>
+      <div>Public data. Published methods. Stated uncertainty.</div>
+    </div>
+    <p class="disclaimer">Nothing on this site is medical advice</p>
   </div>
 </footer>
 
+<script>
+const TABS = {
+  models: {
+    tag:"Models", title:"One module live, five in development",
+    body:"Human Metrix develops data visualization and modeling modules across health, economic and demographic indicators. Each module is released only once its methodology, coefficients and calibration results are published alongside it.",
+    tiles:[
+      {g:"g1",tag:"Live · Health",name:"Body Weight Model",soon:false,href:"/models/body-weight.html"},
+      {g:"g2",tag:"Planned",name:"Health Insurance Coverage",soon:true,href:"#discover"},
+      {g:"g3",tag:"Planned",name:"Mental Health Days",soon:true,href:"#discover"},
+      {g:"g4",tag:"Planned",name:"Smoking Prevalence",soon:true,href:"#discover"},
+      {g:"g5",tag:"Planned",name:"Household Income",soon:true,href:"#discover"},
+      {g:"g6",tag:"Planned",name:"Self-Reported vs. Measured",soon:true,href:"#discover"},
+    ]
+  },
+  data: {
+    tag:"Data sources", title:"Built on public, auditable data",
+    body:"Every module draws on public-use survey and administrative datasets — reviewed, cleaned and standardized before they inform any visualization or model.",
+    tiles:[
+      {g:"g1",tag:"~400k adults/yr",name:"CDC BRFSS",soon:false,href:"#sources"},
+      {g:"g3",tag:"Exam room",name:"NHANES",soon:false,href:"#sources"},
+      {g:"g5",tag:"Census microdata",name:"ACS PUMS",soon:false,href:"#sources"},
+      {g:"g2",tag:"Stub · unconfirmed",name:"County Health Rankings",soon:true,href:"#sources"},
+    ]
+  },
+  method: {
+    tag:"Method", title:"Consistent standards across every module",
+    body:"Each module released by Human Metrix is held to the same three standards: public data, published methodology, and clearly stated uncertainty.",
+    tiles:[
+      {g:"g4",tag:"Standard",name:"Public data only",soon:false,href:"#build"},
+      {g:"g6",tag:"Standard",name:"Methods in the open",soon:false,href:"#build"},
+      {g:"g1",tag:"Standard",name:"Uncertainty stated first",soon:false,href:"#build"},
+    ]
+  }
+};
+
+function renderTab(key){
+  const t = TABS[key];
+  document.getElementById("tabtag").textContent = t.tag;
+  document.getElementById("tabtitle").textContent = t.title;
+  document.getElementById("tabbody").textContent = t.body;
+  const row = document.getElementById("tilerow");
+  row.innerHTML = "";
+  t.tiles.forEach(tile=>{
+    const a = document.createElement("a");
+    a.className = "tile "+tile.g+(tile.soon?" soon":"");
+    a.href = tile.href;
+    a.innerHTML = '<div class="ttag">'+tile.tag+'</div><div class="tname">'+tile.name+'</div>';
+    row.appendChild(a);
+  });
+}
+document.querySelectorAll(".tab").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    document.querySelectorAll(".tab").forEach(b=>{b.classList.remove("active");b.setAttribute("aria-selected","false")});
+    btn.classList.add("active"); btn.setAttribute("aria-selected","true");
+    renderTab(btn.dataset.tab);
+  });
+});
+renderTab("models");
+</script>
 </body>
 </html>
